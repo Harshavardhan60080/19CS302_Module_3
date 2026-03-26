@@ -1,52 +1,53 @@
-# EX 12 C program to check whether the given number is prime or not using function without return type and with arguments.
+# EX 12 C program  to check whether 87 is prime or not
 ## DATE:
 ## AIM:
-To write a C program to check whether the given number is prime or not using function without return type and with arguments.
+To write a C program  to check whether 87 is prime or not
 
 ## Algorithm
-1. Start
-2. Define function checkPrime(num)
-If num <= 1, print "not a prime" and exit function
-3. Initialize isPrime = 1
-4. Loop from i = 2 to num / 2
-5. If num % i == 0, set isPrime = 0 and break
-6. If isPrime == 1, print "prime"
-Else, print "not prime"
-7. In main(), read number n
-8. Call checkPrime(n)
-9. End
+
+1.Start the program and initialize the number n = 87 and set flag = 0.
+
+2.Use a loop from i = 2 to n/2 to check for factors.
+
+3.Inside the loop, check if n % i == 0; if true, set flag = 1 and break the loop.
+
+4.After the loop, check if flag == 0; if true, the number is prime, otherwise not prime.
+
+5.Display the result and stop the program.
+
 ## Program:
 ```
 #include <stdio.h>
-void checkPrime(int num) {
-    int i, isPrime = 1;
-    if (num <= 1) {
-        printf("%d is not a prime number.\n", num);
-        return;
-    }
-    for (i = 2; i <= num / 2; i++) {
-        if (num % i == 0) {
-            isPrime = 0;
-            break;
-        }
-    }
-    if (isPrime)
-        printf("%d is a prime number.\n", num);
-    else
-        printf("%d is not a prime number.\n", num);
-}
 int main() {
-    int n;
-    printf("Enter a number: ");
-    scanf("%d", &n);
-    checkPrime(n);
-    return 0;
+  int n=87, i, flag = 0;
+ 
+  for (i = 2; i <= n / 2; ++i) {
+    
+    if (n % i == 0) {
+      flag = 1;
+      break;
+    }
+  }
+
+  if (n == 1) {
+    printf("1 is neither prime nor composite.");
+  } 
+  else {
+    if (flag == 0){
+      printf("%d is a prime number.", n);
+    }
+    else{
+      printf("%d is not a prime number.", n);
+    }
+  }
+
+  return 0;
 }
 ```
 
 ## Output:
 
-![image](https://github.com/user-attachments/assets/76e3ce58-a543-4099-b915-204e6a0c1330)
+<img width="604" height="125" alt="Screenshot 2026-03-19 134746" src="https://github.com/user-attachments/assets/543d42e8-dfe3-4393-8ed6-be9fae15a97c" />
 
 
 ## Result:
